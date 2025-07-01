@@ -1,10 +1,13 @@
+import os
+import pandas as pd
+# Set environment variables before importing any packages that might use them
+os.environ["LANGCHAIN_TRACING_V2"] = "false"
+os.environ["LANGCHAIN_ENDPOINT"] = ""
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
+
 from langchain_ollama import OllamaEmbeddings
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
-import os
-import pandas as pd
-os.environ["LANGCHAIN_TRACING_V2"] = "false"
-os.environ["LANGCHAIN_ENDPOINT"] = ""
 
 
 df = pd.read_csv("realistic_restaurant_reviews.csv")
